@@ -1,6 +1,4 @@
 streamlit
-numpy
-Pillow
+openai
 gTTS
-moviepy==1.0.3
-imageio-ffmpeg
+Pillow

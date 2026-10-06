@@ -1,47 +1,19 @@
-# The Belief Machine — Talking Avatar
+# The Belief Machine V2
 
-## 1. Install Python packages
+Android-friendly AI character prototype.
 
-```bash
-pip install -r requirements.txt
+## Deploy with Streamlit Community Cloud
+
+1. Create a GitHub repository.
+2. Upload `app.py`, `requirements.txt`, and `17080.png`.
+3. Deploy `app.py` on Streamlit Community Cloud.
+4. In Settings → Secrets add:
+
+```toml
+OPENAI_API_KEY = "your-key"
+OPENAI_MODEL = "gpt-5"
 ```
 
-You also need FFmpeg available to MoviePy. On Windows, install FFmpeg and
-add it to PATH. On macOS:
+Never commit your API key to GitHub.
 
-```bash
-brew install ffmpeg
-```
-
-On Ubuntu/Debian:
-
-```bash
-sudo apt install ffmpeg
-```
-
-## 2. Put the portrait beside the app
-
-Keep the supplied image as:
-
-```text
-17080.png
-```
-
-in the same folder as `app.py`.
-
-## 3. Run
-
-```bash
-streamlit run app.py
-```
-
-The browser will open a chat interface.
-
-## 4. Upgrade to real lip-sync
-
-The included animation is deliberately lightweight. For realistic speech,
-replace `make_talking_video()` with a neural talking-head model such as
-LivePortrait, Wav2Lip or SadTalker, or connect a hosted avatar API.
-
-The application architecture is already separated so that the avatar
-renderer can be swapped without rebuilding the chat interface.
+V2 includes AI conversation, session memory, personality modes, text-to-speech, and a mobile-friendly interface. The architecture is ready for a realistic talking-head/lip-sync renderer.
